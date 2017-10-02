@@ -45,7 +45,7 @@ class UserActions extends Command
                 ->setRows($users);
             $table->render();
         } else {
-            $output->writeln('<error>The Signet account could not be ported.</error>');
+            $output->writeln('<error>No users found.</error>');
         }
 
         return false;

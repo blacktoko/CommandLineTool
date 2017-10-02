@@ -20,8 +20,8 @@ $finder = new Finder();
 $finder->files()->in('app/Actions');
 
 foreach ($finder as $file) {
-      $class = 'Actions\\' . $file->getBasename('.php');
-      $app->add(new $class());
+    $class = 'Actions\\' . $file->getBasename('.php');
+    $app->add(new $class());
 }
 
 $app->run();

@@ -7,7 +7,8 @@
       "autoload": {
         "psr-4": {
             "Actions\\": "app/Actions",
-            "Helpers\\": "app/Helpers"
+            "Helpers\\": "app/Helpers",
+            "Users\\": "app/Users"
         }
     }
 }

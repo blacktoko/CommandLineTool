@@ -1,0 +1,13 @@
+{
+    "require": {
+        "symfony/console": "^3.1",
+        "symfony/yaml": "^3.1",
+        "symfony/finder": "^3.2"
+    },
+      "autoload": {
+        "psr-4": {
+            "Actions\\": "app/Actions",
+            "Helpers\\": "app/Helpers"
+        }
+    }
+}

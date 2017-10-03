@@ -32,7 +32,7 @@ class Database {
         if ( ! array_key_exists($name, $this->databases)) {
             throw new \Exception('Unable to load database, it does not appears in the config file.');
         }
-        $dsn = 'mysql:host=' . $this->databases[$name]['database_host'] . ';dbname=' . $this->databases[$name]['database_name'];
+        $dsn = 'mysql:host=' . $this->databases[$name]['database_host'] . ';port=' . $this->databases[$name]['database_port'] . ';dbname=' . $this->databases[$name]['database_name'];
         $this->connection = new \PDO($dsn, $this->databases[$name]['database_user'], $this->databases[$name]['database_password']);
         return $this->connection;
     }

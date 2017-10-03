@@ -5,9 +5,7 @@
  * Time: 21:26
  */
 
-namespace Users;
-
-use Helpers\Database;
+namespace Helpers;
 
 class Users
 {
@@ -31,6 +29,6 @@ class Users
             throw new \Exception(__FUNCTION__ . ': Unable to get Users from database: ' . print_r($users->errorInfo(), true));
         }
 
-        return $users->fetchAll(PDO::FETCH_ASSOC);
+        return $users->fetchAll(\PDO::FETCH_ASSOC);
     }
 }

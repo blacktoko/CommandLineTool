@@ -13,7 +13,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Helper\Table;
-use Users;
+use Helpers;
 
 class UserActions extends Command
 {
@@ -36,7 +36,7 @@ class UserActions extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $userHelper = new Users\Users();
+        $userHelper = new Helpers\Users();
         $users = $userHelper->getUsers();
         if ($users) {
             $table = new Table($output);

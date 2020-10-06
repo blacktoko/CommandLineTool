@@ -2,7 +2,9 @@
 
 namespace Helpers;
 
+use Exception;
 use Symfony\Component\Yaml\Yaml;
+use PDOException;
 
 /**
  * User: tom
@@ -32,8 +34,14 @@ class Database {
         if ( ! array_key_exists($name, $this->databases)) {
             throw new \Exception('Unable to load database, it does not appears in the config file.');
         }
+
         $dsn = 'mysql:host=' . $this->databases[$name]['database_host'] . ';port=' . $this->databases[$name]['database_port'] . ';dbname=' . $this->databases[$name]['database_name'];
-        $this->connection = new \PDO($dsn, $this->databases[$name]['database_user'], $this->databases[$name]['database_password']);
-        return $this->connection;
+
+        try {
+            $this->connection = new \PDO($dsn, $this->databases[$name]['database_user'], $this->databases[$name]['database_password']);
+            return $this->connection;
+        } catch (\PDOException $e) {
+            throw new Exception('Caught database exception on line: '. $e->getLine() . ' Error: ' . $e->getMessage());
+        }
     }
 }

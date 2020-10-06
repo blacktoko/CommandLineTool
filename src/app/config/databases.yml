@@ -1,0 +1,7 @@
+# app/config/databases.yml
+test:
+  database_host:      127.0.0.1
+  database_port:      3360
+  database_name:      test
+  database_user:      root
+  database_password:  kluh?e6h

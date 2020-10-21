@@ -23,7 +23,7 @@ class Users
 
     public function getUsers()
     {
-        $query = 'SELECT * FROM Users';
+        $query = 'SELECT * FROM users';
         $users = $this->usersDatabase->query($query);
         if ( ! $users) {
             throw new \Exception(__FUNCTION__ . ': Unable to get Users from database: ' . print_r($users->errorInfo(), true));

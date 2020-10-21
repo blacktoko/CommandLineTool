@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+
+  php:
+    image: php:7.4-fpm
+    volumes:
+        - ./src:/var/www
+    working_dir: /var/www
+    networks:
+      php:
+    stdin_open: true
+    tty: true
+    
+networks:
+  php:
